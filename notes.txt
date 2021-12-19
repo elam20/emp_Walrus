@@ -1,0 +1,21 @@
+// Walrus (Humans: Daniel Jung, Joshua Yagupsky, Ethan Lam; Ducks: Ralph, Quacker, Carl)
+// APCS pd8
+// L03: Get Empirical
+// 2021-12-16
+// time spent: 1 hrs
+
+/***
+    DISCO:
+    -
+    QCC:
+    -
+ ***/
+ 
+ Algorithm idea:
+ 1. Create an array with same size as input array
+ 2. Fill the array with the number of binary/linear searches to reach that index
+ 3. Start timer
+ 4. Binary/lin search
+ 5. End timer
+ 6. Find number of array acesses using newly created array
+ 7. Find elapsed time

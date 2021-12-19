@@ -1,0 +1,27 @@
+// Walrus (Humans: Daniel Jung, Joshua Yagupsky, Ethan Lam; Ducks: Ralph, Quacker, Carl)
+// APCS pd8
+// L03: Get Empirical
+// 2021-12-16
+// time spent: 1 hrs
+
+/***
+    DISCO:
+    -
+    QCC:
+    -
+ ***/
+
+Ideas on how to compare binSearch and linSearch speed:
+- We can, of course, use the currentTimeMillis() to calculate the elapsed time of a method.
+- We can also use the number of array accesses or comparisons as a good gauge for algorithm speed. This strategy may be better,
+since it does not depend on machine specifications.
+
+Ideas on how to test methods:
+- We could hardcode the arrays, but it could be beneficial to use input and output redirection to read in data from a file and output it to a file.
+- Perhaps at the start of the program we read in sequences of numbers using nextLine() and store them in an array of arrays. Then, for each array,
+we time each of the search algorithms for a variety of inputs. The results for each array are then sent to an output file.
+
+Things to keep in mind:
+- Make sure that we are as measuring time passed as accurately as possible (i.e. simple and clean code), measure time immediately before and after code runs.
+- Make sure to run many trials with different array sizes.
+- Make sure that the arrays that we test with have enough values so that our results are meaningful.
