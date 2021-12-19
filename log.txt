@@ -1,3 +1,6 @@
 2021-12-16: Worked on plan, updated notes, added repo to googform
 
-2021-12-17: Recieved peer-feedback, worked on strategy and plan, and updated README
+2021-12-17: Received peer-feedback, worked on strategy and plan, and updated README.
+
+2021-12-19: Started implementing plan, created "augmented linear search method" that
+tells user the elapsed time and array accesses.
