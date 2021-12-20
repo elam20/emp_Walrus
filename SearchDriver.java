@@ -14,15 +14,32 @@ public class SearchDriver{
     long[] ret = {eTime, i+1};
     return ret;
   }
+  /*binFill: Creates an array of a given size, fills each element of the array with how many array accesses it would take to get there using binary search*/
+  public static int[] binFill(int size){
+  	return binFillHelper(new int[size], 0, size-1, 1);
+  }
+  private static int[] binFillHelper(int[] a, int lo, int hi, int val){
+  	int m = (lo + hi) / 2;
+  	if (hi >= lo){
+  		a[m] = val;
+  		binFillHelper(a, lo, m-1, val+1);
+  		binFillHelper(a,m+1,hi, val+1);
+  	}
+  	return a;
+  }
 	public static void main(String[] args) {
     //Brief testing
-    Integer[] myArr = new Integer[100000000];
+    /*Integer[] myArr = new Integer[100000000];
     myArr[0] = 0;
     for(int i = 1; i < myArr.length; i++){
       myArr[i] = (int) (Math.random()*(2)+myArr[i-1]);
     }
     long[] outs = augLinSearch(myArr,myArr[myArr.length-1]);
     System.out.println("Elapsed time: " + outs[0] + " milliseconds");
-    System.out.println("Number of accesses: " + outs[1]);
+    System.out.println("Number of accesses: " + outs[1]);*/
+    int[] bob = binFill(25);
+    for(int i : bob){
+    	System.out.println(i);
+    }
 	}
 }

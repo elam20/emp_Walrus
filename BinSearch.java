@@ -41,7 +41,7 @@ public class BinSearch
       tPos = m;
     // value at mid index higher than target
     else if ( a[m].compareTo(target) > 0 ) 
-      tPos = binSearchRec( a, target, 0, m-1 );
+      tPos = binSearchRec( a, target, lo, m-1 );
     // value at mid index lower than target
     else if ( a[m].compareTo(target) < 0 ) 
       tPos = binSearchRec( a, target, m+1, hi );
