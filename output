@@ -1,0 +1,6 @@
+RACE OF THE ALGORITHMS: 50000 TOTAL TRIALS
+
+Linear search time: 106858 milliseconds.
+Linear search accesses: 37504597986 accesses.
+Binary search time: 38 milliseconds.
+Binary search accesses: 947579 accesses.

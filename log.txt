@@ -4,3 +4,6 @@
 
 2021-12-19: Started implementing plan, created "augmented linear search method" that
 tells user the elapsed time and array accesses.
+
+2021-12-20: Finished augmented search methods, added the ability to run multiple trials. Ran 50,000 trials and collected data
+in the output file. Updated README and notes.
