@@ -3,7 +3,7 @@
 Humans: Daniel Jung, Joshua Yagupsky, Ethan Lam; Ducks: Ralph, Quacker, Carl
 
 # Tests Performed
-**Linear Search:**
+**Linear Search**
 - Records time start
 - Selects a random target from the second half of the input array and then iterates through it to find the index
 - Records time end
@@ -15,7 +15,7 @@ Humans: Daniel Jung, Joshua Yagupsky, Ethan Lam; Ducks: Ralph, Quacker, Carl
 - Selects a random target from the second half of the input array and then continuously eliminates half of the array until the index is found
 - Records time end
 - Repeats for inputted # of trials
-- Returns total elapsed time in milliseconds and # of times the array was accessed (check notes.txt to see special algo!)
+- Returns total elapsed time in milliseconds and # of times the array was accessed (check notes.txt to see special algorithm!)
 
 We then generated an array one million elements long, where each element is greater than or equal to the one that came before it. This ensured that the array was sorted, which is a precondition for binary search. We then ran binary and linear search fifty thousand times and put the total elapsed times and array accesses in an output file.
 
