@@ -1,3 +1,7 @@
+// Walrus (Humans: Daniel Jung, Joshua Yagupsky, Ethan Lam; Ducks: Ralph, Quacker, Carl)
+// APCS pd8
+// L03: Get Empirical
+// 2021-12-16 -- 2021-12-20
 2021-12-16: Worked on plan, updated notes, added repo to googform
 
 2021-12-17: Received peer-feedback, worked on strategy and plan, and updated README.
