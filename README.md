@@ -20,14 +20,17 @@ Humans: Daniel Jung, Joshua Yagupsky, Ethan Lam; Ducks: Ralph, Quacker, Carl
 We then generated arrays of varying lengths, where each element in every array is greater than or equal to the one that came before it. This ensured that the arrays was sorted, which is a precondition for binary search. We then ran binary and linear search fifty thousand times per array and put the total elapsed times and array accesses in an output file.
 
 # Results
-**Linear Search**
-
-
-**Binary Search**
-
+| # of Elements  | LinSearch Time (ms) | LinSearch Array Accesses | BinSearch Time (ms) | BinSearch Array Accesses |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 10  | 5  | 390_225  | 11  | 150_001  |
+| 100  | 9  | 3_712_944  | 3  | 229_781  |
+| 1_000  | 36  | 37_461_123  | 6  | 384_560  |
+| 10_000  | 690 | 375_163_776  | 11  | 554_949  |
+| 100_000  | 4_481  | 3_751_236_450  | 7  | 718_575  |
+| 1_000_000  | 86_633  | 37_542_272_548  | 21  | 884_799  |
 
 # Conclusions
-
+Our results show that although linear search and binary search are about the same speed for small arrays, for bigger arrays the differences are drastic. For an array with one million elements, linear search took over four thousand times as binary search to find elements in the array. It's important to note that this result may not be entirely accurate, since time intervals of less than one second are rounded down to zero, understating the total amount of time required. This is why we chose to also count array accesses, which are a better measure of algorithm speed. For an array of one million elements, linear searching required forty-two thousand times the number of array accesses as binary searching, demonstrating that our time measurements overstate the speed of linear search.
 
 # Gallery Tour
 **Discord Ducks**
