@@ -9,7 +9,7 @@ public class SearchDriver{
     long iTime = 0;
     long fTime = 0;
     long eTime = 0;
-    long index = 0;
+    int index = 0;
     long accesses = 0;
     int[] indices = binFill(a.length);
     //Calculate initial time, run algorithm, calculate final time, take difference for elapsed time
@@ -18,10 +18,10 @@ public class SearchDriver{
       iTime = System.currentTimeMillis();
       index = BinSearch.binSearch(a, target);
       fTime = System.currentTimeMillis();
-      //Elapsed time for a round is just the difference between final and initial time, plus one to account for rounding
+      //Elapsed time for a round is just the difference between final and initial time
       eTime += fTime - iTime;
       //
-      accesses += indices[i];
+      accesses += indices[index];
     }
     long[] ret = {eTime, accesses};
     return ret;
@@ -32,15 +32,15 @@ public class SearchDriver{
     long iTime = 0;
     long fTime = 0;
     long eTime = 0;
-    long index = 0;
+    int index = 0;
     long accesses = 0;
-    //Elapsed time for a round is just the difference between final and initial time, plus one to account for rounding
+    //Elapsed time for a round is just the difference between final and initial time
     for (int i = 0; i < trials; i++) {
       target = a[(int) ((Math.random() * a.length / 2.0) + a.length / 2.0)];
       iTime = System.currentTimeMillis();
       index = LinSearch.linSearch(a, target);
       fTime = System.currentTimeMillis();
-      //Elapsed time for a round is just the difference between final and initial time
+      //Elapsed time for a round is just the difference between final and initial time, plus one to account for rounding
       eTime += fTime - iTime;
       //The number of array accesses in a linear search is just the position of the element plus one.
       accesses += index + 1;
@@ -48,7 +48,7 @@ public class SearchDriver{
     long[] ret = {eTime, accesses};
     return ret;
   }
-  /*binFill: Creates an array of a given size, fills each element of the array with how many array accesses it would take to get there using binary search*/
+  //binFill: Creates an array of a given size, fills each element of the array with how many array accesses it would take to get there using binary search
   public static int[] binFill(int size){
   	return binFillHelper(new int[size], 0, size-1, 1);
   }
@@ -61,22 +61,32 @@ public class SearchDriver{
   	}
   	return a;
   }
+  //incArray: Creates a sorted array of integers of a given size
+  public static Integer[] incArray(int size){
+    Integer[] a = new Integer[size];
+    a[0] = 0;
+    for(int i = 1; i < a.length; i++){
+      a[i] = (int) (Math.random()*(2)+a[i-1]);
+    }
+    return a;
+  }
 	public static void main(String[] args) {
     long numTrials = Long.parseLong(args[0]);
-    Integer[] myArr = new Integer[1_000_000];
-    //Generates a new increasing array
-    myArr[0] = 0;
-    for(int i = 1; i < myArr.length; i++){
-      myArr[i] = (int) (Math.random()*(2)+myArr[i-1]);
-    }
-    //Race of algorithms
-    long[] lins = augLinSearch(myArr, numTrials);
-    long[] bins = augBinSearch(myArr, numTrials);
-    System.out.println("RACE OF THE ALGORITHMS: " + numTrials + " TOTAL TRIALS");
+    System.out.println("RACE OF THE ALGORITHMS: " + numTrials + " TRIALS");
     System.out.println();
-    System.out.println("Linear search time: " + lins[0] + " milliseconds.");
-    System.out.println("Linear search accesses: " + lins[1] + " accesses.");
-    System.out.println("Binary search time: " + bins[0] + " milliseconds.");
-    System.out.println("Binary search accesses: " + bins[1] + " accesses.");
+    int[] arraySizes = {10,100,1_000,10_000,100_000,1_000_000};
+    for(int size : arraySizes){
+      Integer[] myArr = incArray(size);
+      //Race of algorithms
+      long[] lins = augLinSearch(myArr, numTrials);
+      long[] bins = augBinSearch(myArr, numTrials);
+      System.out.println("Data for an array of " + size + " elements");
+      System.out.println();
+      System.out.println("Linear time: " + lins[0] + " milliseconds.");
+      System.out.println("Linear accesses: " + lins[1] + " accesses.");
+      System.out.println("Binary time: " + bins[0] + " milliseconds.");
+      System.out.println("Binary accesses: " + bins[1] + " accesses.");
+      System.out.println();
+    }
 	}
 }

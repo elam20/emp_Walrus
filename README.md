@@ -17,16 +17,36 @@ Humans: Daniel Jung, Joshua Yagupsky, Ethan Lam; Ducks: Ralph, Quacker, Carl
 - Repeats for inputted # of trials
 - Returns total elapsed time in milliseconds and # of times the array was accessed (check notes.txt to see special algorithm!)
 
-We then generated an array one million elements long, where each element is greater than or equal to the one that came before it. This ensured that the array was sorted, which is a precondition for binary search. We then ran binary and linear search fifty thousand times and put the total elapsed times and array accesses in an output file.
+We then generated arrays of varying lengths, where each element in every array is greater than or equal to the one that came before it. This ensured that the arrays was sorted, which is a precondition for binary search. We then ran binary and linear search fifty thousand times per array and put the total elapsed times and array accesses in an output file.
 
 # Results
 **Linear Search**
-It took linear search a total time of 106858 milliseconds, or over a minute and a half, to search for elements near the end of the array. Since there were 50000 trials, this means it took ~2 milliseconds on average per search. The linear search algorithm had to access the array 37504597986 times, or roughly 750,000 times on average per search.
+
 
 **Binary Search**
-It took linear search a total time of 38 milliseconds to search for elements near the end of the array. The linear search algorithm had to access the array 947579 times, or roughly 19 times on average per search.
+
 
 # Conclusions
-Given a sorted array and an element to search in it, using binary search will almost always be orders of magnitude faster than simply linear searching. The reason for this is simple. If linear search makes an incorrect guess, this only rules out one element. However, if binary search makes an incorrect guess, this rules out roughly half of the array.
 
-We may be slightly underestimating the time for binary search, since if each individual round of searching takes less than a millisecond, this time will not be counted in our elapsed time, as currentTimeMillis() returns a long integer, not a floating-point number. However, the array accesses tell the same story as the elapsed time, so this doesn't affect our conclusions.
+
+# Gallery Tour
+**Discord Ducks**
+- Range of times is given in results
+- Various array sizes were used to test
+- Did not count # of array accesses
+
+**MumbleCore**
+- Always looking for the last element in the array
+- 10,000 trials were used to find meaningful difference in data
+- REALLY nice graphical representations of data
+
+**Consonants**
+- Different sizes of arrays were tested
+- Linsearch becomes more and more inefficient as the arrays get larger
+- Took the highest values of time in order to represent the "worst-case scenario"
+- Different computers seem to give different results - maybe look towards other means of measurement?
+
+**Overall Takeaways / Improvements to be made**
+- Improve testing scope with multiple array sizes
+- Make sure that the data that we are collecting is significant - stray away from 0 millisecond values
+- Add charts / maybe graphs to the README for clearer understanding

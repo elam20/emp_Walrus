@@ -1,6 +1,44 @@
-RACE OF THE ALGORITHMS: 50000 TOTAL TRIALS
+RACE OF THE ALGORITHMS: 50000 TRIALS
 
-Linear search time: 106858 milliseconds.
-Linear search accesses: 37504597986 accesses.
-Binary search time: 38 milliseconds.
-Binary search accesses: 947579 accesses.
+Data for an array of 10 elements
+
+Linear time: 5 milliseconds.
+Linear accesses: 390225 accesses.
+Binary time: 11 milliseconds.
+Binary accesses: 150001 accesses.
+
+Data for an array of 100 elements
+
+Linear time: 9 milliseconds.
+Linear accesses: 3712944 accesses.
+Binary time: 3 milliseconds.
+Binary accesses: 229781 accesses.
+
+Data for an array of 1000 elements
+
+Linear time: 36 milliseconds.
+Linear accesses: 37461123 accesses.
+Binary time: 6 milliseconds.
+Binary accesses: 384560 accesses.
+
+Data for an array of 10000 elements
+
+Linear time: 690 milliseconds.
+Linear accesses: 375163776 accesses.
+Binary time: 11 milliseconds.
+Binary accesses: 554949 accesses.
+
+Data for an array of 100000 elements
+
+Linear time: 4481 milliseconds.
+Linear accesses: 3751236450 accesses.
+Binary time: 7 milliseconds.
+Binary accesses: 718575 accesses.
+
+Data for an array of 1000000 elements
+
+Linear time: 86633 milliseconds.
+Linear accesses: 37542272548 accesses.
+Binary time: 21 milliseconds.
+Binary accesses: 884799 accesses.
+
